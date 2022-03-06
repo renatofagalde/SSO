@@ -8,25 +8,29 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HandlerController {
 
-    @GetMapping(value = {"/", "/login"})
+    @GetMapping("/contact-us")
     public ModelAndView login() {
-        return new ModelAndView("login");
+        ModelAndView modelAndView = new ModelAndView("contact-us");
+        return modelAndView;
     }
 
-    @GetMapping(value = "/home")
+    @GetMapping("/home")
     public ModelAndView home() {
-        return new ModelAndView("home");
+        ModelAndView modelAndView = new ModelAndView("home");
+        return modelAndView;
     }
 
-    @GetMapping(value = "/manage-students")
-    @PreAuthorize("hasAnyAuthority('professor')")
+    @GetMapping("/manage-students")
+    @PreAuthorize("hasAuthority('PROFESSOR')")
+    //@PreAuthorize("hasAuthority('PROFESSOR') or hasAuthority('STUDENT')")
     public ModelAndView manageStudents() {
-        return new ModelAndView("manage-students");
+        ModelAndView modelAndView = new ModelAndView("manage-students");
+        return modelAndView;
     }
 
-    @GetMapping(value = "/access-denied")
+    @GetMapping("/access-denied")
     public ModelAndView accessDenied() {
-        return new ModelAndView("access-denied");
+        ModelAndView modelAndView = new ModelAndView("access-denied");
+        return modelAndView;
     }
-
 }
