@@ -3,10 +3,10 @@ package br.com.likwi.sso.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Data
-@Entity(name = "user")
+@Entity
 public class User {
 
     @Id
@@ -19,10 +19,10 @@ public class User {
 
     private String email;
 
-    private String username;
+    private String userName;
 
     private String password;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Set<Role> roles;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Role> roles;
 }
