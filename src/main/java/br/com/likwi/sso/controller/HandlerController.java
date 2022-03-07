@@ -21,7 +21,7 @@ public class HandlerController {
     }
 
     @GetMapping("/manage-students")
-    @PreAuthorize("hasAuthority('PROFESSOR')")
+    @PreAuthorize("hasAuthority('professor')")
     //@PreAuthorize("hasAuthority('PROFESSOR') or hasAuthority('STUDENT')")
     public ModelAndView manageStudents() {
         ModelAndView modelAndView = new ModelAndView("manage-students");
