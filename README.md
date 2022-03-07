@@ -6,4 +6,5 @@ The project will be build running keycloak over docker and Spring with thymeleaf
 
 I really don't like to use this way in my production projects.
 
-Use SSO Sub context to test the SSO.
+Use [SSO_SubContexto](https://github.com/renatofagalde/SSO_SubContext) context to test the SSO.
+
